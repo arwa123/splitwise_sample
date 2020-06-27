@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: zolo1234
+    url: jdbc:mysql://localhost:3306/SPLITWISE
+    username: root
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy : org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    
+        
+
+
+logging:
+  level:
+    ROOT: INFO
+    com.zolo: INFO
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+server:
+  servlet:
+    context-path: '/splitwise/api'
+  port: 8085
+
+
+    
